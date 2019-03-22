@@ -44,4 +44,7 @@ We will cover:
 
 ## Homework
 - Finish Basic Javascript section in Javascript Algorithms And Data Structures Certification (freecodecamp)
-- More functions
+- day3 homework worksheet (started in class): https://github.com/onelovelyname/lab/blob/master/homework/day3.js
+- [Optional] If you'd like more practice with Git, I recommend doing this online tutorial: https://www.codecademy.com/learn/learn-git/modules/learn-git-git-workflow-u
+
+*Code from the Question and Answer session is located here: `challenges/test.js`*
