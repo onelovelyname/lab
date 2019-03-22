@@ -1,5 +1,5 @@
 // Warm Up Challenge for day 4!
-// Create an array of numbers, log every item less than 5.(Make sure to create numbers both larger or less than 5)
+// Create an array of numbers, create a functions that returns a new array, with only numbers less than 5
 // For Practice, do this inside a function
 // Your code here:
 
