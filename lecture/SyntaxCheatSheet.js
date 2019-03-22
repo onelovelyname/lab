@@ -18,9 +18,9 @@ newList.push("Sweater") // Adding sweater ot the newList
 
 //OBJECT MANIPULATION
 let irene = {             //Creating an obect called Irene 
-	'gender': 'Female',
-	'hobby': "Working Out",
-	'nationality': 'Canadian'
+'gender': 'Female',
+'hobby': "Working Out",
+'nationality': 'Canadian'
 };
 console.log(irene); //Logging Irene
 console.log(irene.nationality) //Logging nationality property of Irene using dot notation
