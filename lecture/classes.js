@@ -33,10 +33,10 @@ var Animal = function(color, age, species, name) {
 	return animal;
 }
 
-let lucy2 = new Animal("white", 2, "cat", "lucy");
+// let lucy2 = new Animal("white", 2, "cat", "lucy");
 
-lucy2.talk("meow");
-lucy2.eat("fried chicken");
+// lucy2.talk("meow");
+// lucy2.eat("fried chicken");
 
 // let odin = {
 // 	color: "blonde",
@@ -45,10 +45,10 @@ lucy2.eat("fried chicken");
 // 	likes: "sleep"
 // };
 
-let odin2 = new Animal("blonde", 2, "Golden Retriever", "Odin");
+// let odin2 = new Animal("blonde", 2, "Golden Retriever", "Odin");
 
-odin2.talk("woof");
-odin2.eat("dog meat");
+// odin2.talk("woof");
+// odin2.eat("dog meat");
 
 
 
@@ -73,18 +73,25 @@ class AnimalClass {
   	}
 }
 
-let poochie2 = new AnimalClass("white", 5, "Poodle", "Poochie");
+class CatClass extends AnimalClass {
+	assignBreed(breed) {
+		this.breed = breed;
+	}
+}
 
-poochie2.eat("chicken");
-poochie2.talk("Russian");
-poochie2.identity();
+// let poochie2 = new AnimalClass("white", 5, "Poodle", "Poochie");
 
+// poochie2.eat("chicken");
+// poochie2.talk("Russian");
+// poochie2.identity();
 
+// new Animal("white", 2, "cat", "lucy");
+let lucyCat = new CatClass("white", 2, "cat", "lucy");
+console.log(lucyCat);
 
+lucyCat.assignBreed("persian");
+console.log(lucyCat);
 
-
-var input = $('#bookInput').val();
-$('#bookImage').append('<img src="url" alt="">');
 
 
 

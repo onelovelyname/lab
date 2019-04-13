@@ -14,11 +14,11 @@
 	* React components can have a local state set in the constructor function (what is called when the component is created)
 	* state is accessed by `this.state`
 
-## [30 minutes] BREAK - Walk in sunshine and go to Zuwadeh together
-
 ## [60 minutes] Build small React application in pairs using create-react-app tutorial
 - Get the application started following these instructions: https://www.codecademy.com/articles/how-to-create-a-react-app
 - Create an input for selecting a language: English or Arabic
 - Create one child component within `App` that says "Hello" in English or Arabic
 - If time, create a second child component within `App` that tells the user what time it is in their language 
 	* Make a call to the `curl "http://worldtimeapi.org/api/ip"` api and retrieve time for the user's location, based on their IP address
+
+## [30 minutes] BREAK - Walk in sunshine and go to Zuwadeh together

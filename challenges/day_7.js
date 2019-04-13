@@ -24,46 +24,58 @@ Arabic Explination at bottom of page!
 
 
 // ~~~~~~~~~~~~~ Function Constructor ~~~~~~~~~~~~~~~
-var Person = function(name, age, talent) {
+var Person = function(name, age, talent, gender) {
  var person = {};
  person.name = name;
  person.age = age;
  person.talent = talent;
-
+ person.gender = gender;
  person.sayHello = function () {
   console.log(`Hello, my name is: ${person.name}`);
  }
 
 
- person.walk = function(distance){
-  console.log(`${person.name} is walking ${distance} km`)
+ person.walk = function(distance) {
+  console.log(`${person.name} is walking ${distance} km`);
  }
 
- return person
+person.sayTalent = function(){
+	console.log(`My talent is: ${person.talent}`)
+
 }
 
+ return person;
+}
 
+var person = new Person("Bob", 43, "building", "Male");
+person.sayTalent();
+person.walk("23");
 
 
 
 // ~~~~~~~~~~~~~~ Class Declaration ~~~~~~~~~~~~~~~~
 class PersonClass {
- constructor(name, age, talent) {
-  this.name = name;
-  this.age = age;
-  this.talent = talent;
-  
+ 	constructor(name, age, talent, gender) {
+		this.name = name;
+		this.age = age;
+		this.talent = talent;
+		this.gender = gender;
+   	}
+	 sayHello() {
+	  	console.log(`Hello, My name is: ${this.name}`)
+	 }
 
-   }
- sayHello(){
-  console.log(`Hello, My name is: ${this.name}`)
- }
+	 walk(distance) {
+	  	console.log(`${this.name} is walking ${distance} km`);
+	 }
 
- walk(distance){
-  console.log(`${this.name} is walking ${distance} km`)
- }
+	sayTalent(){
+		console.log(`My talent is: ${this.talent}`)
+	}
 }
 
+var person2 = new PersonClass("Mahd", 18, "coding", "female");
+person2.sayTalent();
 
 
 

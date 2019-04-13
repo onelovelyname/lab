@@ -5,17 +5,47 @@ import './index.css';
 class Square extends React.Component {
   render() {
     return (
-      <button className="square">
-        {this.props.id}
+      <button className="square" onClick={() => this.props.onClick() }>
+        {this.props.value}
       </button>
     );
   }
 }
 
 class Board extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isTurnX: false,
+      squares: [
+        "", "", "",
+        "", "", "",
+        "", "", ""
+                ]
+    }
+  }
+
   renderSquare(i) {
     console.log("i: " + i);
-    return <Square id={i} />;
+    // add handler for button click: handleClick
+    return (<Square 
+      id={i} 
+      land={2} 
+      value={this.state.squares[i]} 
+      onClick={this.handleClick(i)} 
+    />);
+  }
+
+  handleClick(i) {
+    console.log("heard handleClick")
+    const squares = this.state.squares.slice();
+    squares[i] = 'X';
+    //this.setState({squares: squares});
+    // squares[i] = 'X';
+    // this.setState({
+    //   squares: squares,
+    //   isTurnX: !this.state.isTurnX
+    // });
   }
 
   render() {
