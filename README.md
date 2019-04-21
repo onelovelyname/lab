@@ -3,7 +3,7 @@
 - March 2, 9, 16, 23, 30
 - April 6, 13 (and either 20 or 27)
 - May 4, 11, 18, 25
-- June 1, 8, 15, 22
+- June 1, 8, 15
 
 - All classes are 1:45-6:15pm 
 
