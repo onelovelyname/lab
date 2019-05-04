@@ -67,8 +67,8 @@ class Board extends React.Component {
         'Content-Type': 'application/json'
       }
     })
-    // .then(res => res.json())
-      .then(response => console.log('Success:', JSON.stringify(response)))
+      .then(res => res.json())
+      .then(response => console.log('Success:', response))
       .catch(error => console.error('Error:', error));
     // }
   }
