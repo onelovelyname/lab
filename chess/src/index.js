@@ -56,7 +56,7 @@ class Board extends React.Component {
   }
 
   sendWinner(winner) {
-    const url = "http://localhost:3005/"
+    const url = "http://localhost:3005/";
 
     fetch(url, {
       method: 'POST',  
@@ -70,7 +70,6 @@ class Board extends React.Component {
       .then(res => res.json())
       .then(response => console.log('Success:', response))
       .catch(error => console.error('Error:', error));
-    // }
   }
 
   handleSubmit(event) {

@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', (req, res) => {
-	console.log("heard request at / melanie");
+	console.log("heard request at / ");
 	console.log(req.body);
 	res.send({'winner':'Got a post request with winner: ' + req.body.winner})
 
