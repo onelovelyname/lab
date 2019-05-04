@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p Hello I am here
+  p What is your name? 
+  input(type='text' name='name' autofocus)
+  a(class='button', href='/') Post name
