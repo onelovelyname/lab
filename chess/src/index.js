@@ -15,18 +15,21 @@ class Square extends React.Component {
 class Board extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       isTurnX: false,
       squares: [
         "", "", "",
         "", "", "",
         "", "", ""
-                ]
+                ],
+      xName: "",
+      oName: ""
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   renderSquare(i) {
-    console.log("i: " + i);
     // add handler for button click: handleClick
     return (
       <Square 
@@ -52,18 +55,71 @@ class Board extends React.Component {
     //alert("passed function from Board to Square!");
   }
 
+  sendWinner(winner) {
+    const url = "http://localhost:3005/"
+
+    fetch(url, {
+      method: 'POST',  
+      body: JSON.stringify({
+        winner: winner
+      }),  
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    })
+    // .then(res => res.json())
+      .then(response => console.log('Success:', JSON.stringify(response)))
+      .catch(error => console.error('Error:', error));
+    // }
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+
+    this.setState({
+      oName: event.target.oName.value,        
+      xName: event.target.xName.value
+    });
+  }
+
   render() {
     const winner = calculateWinner(this.state.squares);
     let status;
     if (winner) {
-      status = 'Winner: ' + winner;
+      const winnerVar = winner.toLowerCase()+"Name";
+      const winnerName =this.state[winnerVar];
+      status = 'Winner: ' + winnerName;
+      this.sendWinner(winnerName);
     } else {
       status = 'Next player: ' + (this.state.isTurnX ? 'X' : 'O');
     }
 
+    const getNameDiv = (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          O Name:
+          <input type="text" name="oName" />
+        </label>
+        <label>
+          X Name:
+          <input type="text" name="xName" />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>      
+    );
+
+    const showNameDiv = (
+      <div> 
+        <div className="oName">O Name: {this.state.oName}</div>     
+        <div className="oName">X Name: {this.state.xName}</div>   
+      </div>  
+    );
+
     return (
       <div>
         <div className="status">{status}</div>
+        <div className="names">{this.state.oName && this.state.xName ? showNameDiv : getNameDiv}</div>     
+        <br/>
         <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
