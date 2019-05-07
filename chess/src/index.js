@@ -55,13 +55,14 @@ class Board extends React.Component {
     //alert("passed function from Board to Square!");
   }
 
-  sendWinner(winner) {
-    const url = "http://localhost:3006/";
+  sendWinner(winner, nonWinner) {
+    const url = "http://localhost:3007/tree";
 
     fetch(url, {
       method: 'POST',  
       body: JSON.stringify({
-        winner: winner
+        winner: winner,
+        nonWinner: nonWinner
       }),  
       headers:{
         'Content-Type': 'application/json'
@@ -86,9 +87,18 @@ class Board extends React.Component {
     let status;
     if (winner) {
       const winnerVar = winner.toLowerCase()+"Name";
-      const winnerName =this.state[winnerVar];
+      var winnerName =this.state[winnerVar];
+      var nonWinnerVar;
+      if (winnerName === "xName") {
+        nonWinnerVar = "oName"
+      } else {
+        nonWinnerVar = "xName"
+      }
+      var nonWinnerName = this.state[nonWinnerVar];
+      console.log(nonWinnerName)
+
       status = 'Winner: ' + winnerName;
-      this.sendWinner(winnerName);
+      this.sendWinner(winnerName, nonWinnerName);
     } else {
       status = 'Next player: ' + (this.state.isTurnX ? 'X' : 'O');
     }

@@ -33,3 +33,8 @@ File structure:
     └── layout.pug
 
 7 directories, 9 files
+
+## Homework
+- Go to Glitch website and make a starter project using this link: https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-express/
+	* This project is designed to help you complete the challenges on freecodecamp for Basic Node and Express
+- Using your Glitch project, complete until "Serve Static Assets" on freecodecamp: https://learn.freecodecamp.org/apis-and-microservices/basic-node-and-express/
