@@ -22,6 +22,8 @@
 	* When request is received in server.js, add dream and author INT to Dreams table, add author to Author table
 	* Display author alongside the dream in client.js
 
+A little bit easier: Add "author name" and "dream" to Dreams table, rather than creating a separate table for Author and doing a lookup for author name.
+
 Documentation: 
 - SQLite3 node module: https://github.com/mapbox/node-sqlite3/wiki
 - SQL quick reference: https://www.w3schools.com/sql/sql_quickref.asp
