@@ -1,4 +1,7 @@
+
 node_modules/
+sunshine/node_modules
+upstream/master
 scratch/
 .DS_Store
 package-lock.json
